@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
 import Header from './header/Header'
-import Features from './features/Features'
+import FeatureList from './features/FeatureList'
 
 class App extends Component {
   constructor(props){
     super(props);
     this.state = {
       selected: {
-        Processor: {
+        "Processor": {
             name: '17th Generation Intel Core HB (7 Core with donut spare)',
             cost: 700
           },
@@ -20,7 +20,7 @@ class App extends Component {
             name: 'Toyota Corolla 1.5v',
             cost: 1150.98
           },
-        Display: {
+        "Display": {
             name: '15.6" UHD (3840 x 2160) 60Hz Bright Lights and Knobs',
             cost: 1500
           }
@@ -55,7 +55,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <main>
-          <Features 
+          <FeatureList 
             features={this.props.features}
             selected={this.state.selected}
             handleUpdateFeature={(feature, newValue) => this.updateFeature(feature, newValue)}

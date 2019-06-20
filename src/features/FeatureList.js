@@ -4,32 +4,22 @@ import Feature from './Feature'
 export default function FeatureList(props) {
     const { features, selected, handleUpdateFeature } = props;
 
-    const featurama = Object.keys(features)
-    .map(key => {
-        // const options = features[key].map((item, index) => {
-            return (
-            <Feature 
+    const listOfFeatures = Object.keys(features)
+        .map((key, index) => {
+            return <Feature 
+                key={index}
                 featureTitle={key}
                 features={features}
                 selected={selected}
                 handleUpdateFeature={handleUpdateFeature}
             />
-        // );
-        //     }
-            );
-
-      return <div className="feature" key={key}>
-        <div className="feature__name">{key}</div>
-        <ul className="feature__list">
-          { featurama }
-        </ul>
-      </div>
     });  
 
     return (
-        <div>
-            {featurama}
-        </div>
+        <section className="main__form">
+            <h3>TECH SPECS AND CUSTOMIZATIONS</h3>
+            {listOfFeatures}
+        </section>
     );
     
 }

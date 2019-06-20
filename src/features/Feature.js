@@ -7,14 +7,13 @@ export default function Feature(props) {
         return <FeatureOption 
             item={item}
             index={index}
-            key={featureTitle}
+            key={index}
+            featureTitle={featureTitle}
             handleUpdateFeature={handleUpdateFeature}
             selected={selected}
         />
     })
 
-    // const selectedClass = features.item.name === selected[featureTitle].name ? 'feature__selected' : '';
-    // const featureClass = 'feature__option ' + selectedClass;
     return (
         <div className="feature" key={featureTitle}>
             <div className="feature__name">{featureTitle}</div>
@@ -22,14 +21,5 @@ export default function Feature(props) {
                 {featureOptions}
             </ul>
         </div>
-        // <li featureTitle={index} className="feature__item">
-        //   <div className={featureClass}
-            
-        //     onClick={e => handleUpdateFeature(featureTitle, item)}>
-        //       { item.name }
-        //       ({ new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD'})
-        //         .format(item.cost) })
-        //   </div>
-        // </li>
     )
 }
