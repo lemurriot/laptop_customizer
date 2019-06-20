@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import OgApp from './OgApp';
 import App from './App';
 
 const FEATURES = {
